@@ -1,0 +1,54 @@
+<div class="container mt-5">
+  <h1>Bienvenue sur l'application de gestion des échanges de biens</h1>
+  
+  <h2>Importer une liste d'articles</h2>
+  <form (ngSubmit)="importCSV()">
+    <input type="file" (change)="onFileSelected($event)">
+    <button type="submit" class="btn btn-primary">Importer</button>
+  </form>
+  
+  <h2>Ajouter un article</h2>
+  <form (ngSubmit)="addArticle()">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom:</label>
+      <input type="text" class="form-control" id="nom" [(ngModel)]="article.nom" name="nom" required>
+    </div>
+    <div class="mb-3">
+      <label for="nomenclature" class="form-label">Nomenclature:</label>
+      <input type="text" class="form-control" id="nomenclature" [(ngModel)]="article.nomenclature" name="nomenclature" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+  
+  <h2>Ajouter une facture</h2>
+  <form (ngSubmit)="addFacture()">
+    <div class="mb-3">
+      <label for="date" class="form-label">Date:</label>
+      <input type="date" class="form-control" id="date" [(ngModel)]="facture.date" name="date" required>
+    </div>
+    <div class="mb-3">
+      <label for="fournisseur" class="form-label">Fournisseur:</label>
+      <input type="text" class="form-control" id="fournisseur" [(ngModel)]="facture.fournisseur" name="fournisseur" required>
+    </div>
+    <div class="mb-3">
+      <label for="article_id" class="form-label">Article:</label>
+      <select class="form-select" id="article_id" [(ngModel)]="facture.article_id" name="article_id" required>
+        <option *ngFor="let article of articles" [value]="article.id">{{ article.nom }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="quantite" class="form-label">Quantité:</label>
+      <input type="number" class="form-control" id="quantite" [(ngModel)]="facture.quantite" name="quantite" required>
+    </div>
+    <div class="mb-3">
+      <label for="montant_ht" class="form-label">Montant HT:</label>
+      <input type="number" class="form-control" id="montant_ht" [(ngModel)]="facture.montant_ht" name="montant_ht" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+  
+  <h2>Exporter les données</h2>
+  <form (ngSubmit)="generateCSV()">
+    <button type="submit" class="btn btn-primary">Générer le fichier CSV</button>
+  </form>
+</div>

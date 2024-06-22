@@ -1,0 +1,16 @@
+<div class="container mt-5">
+    <h1>Ajouter un article</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nom" class="form-label">Nom:</label>
+        <input type="text" class="form-control" id="nom" [(ngModel)]="article.nom" name="nom" required>
+      </div>
+      <div class="mb-3">
+        <label for="nomenclature" class="form-label">Nomenclature:</label>
+        <input type="text" class="form-control" id="nomenclature" [(ngModel)]="article.nomenclature" name="nomenclature" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+    <a routerLink="/" class="btn btn-secondary mt-3">Retour</a>
+  </div>
+  
