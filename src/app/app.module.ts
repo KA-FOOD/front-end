@@ -9,13 +9,16 @@ import { DebComponent } from './deb/deb.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { AddFactureComponent } from './add-facture/add-facture.component';
 import { RouterModule } from '@angular/router';
+import { NotFoundError } from 'rxjs';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddArticleComponent,
     DebComponent,
-    AddFactureComponent
+    AddFactureComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

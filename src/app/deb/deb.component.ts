@@ -23,36 +23,36 @@ export class DebComponent implements OnInit {
 
   constructor(private apiService: ApiService) {}
 
-  // ngOnInit(): void {
-  //   this.loadArticles();
-  // }
+  ngOnInit(): void {
+    this.loadArticles();
+  }
 
-  // loadArticles() {
-  //   this.apiService.getArticles().subscribe(data => {
-  //     this.articles = data;
-  //   });
-  // }
+  loadArticles() {
+    this.apiService.getArticles().subscribe(data => {
+      this.articles = data;
+    });
+  }
 
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
   }
 
-  // importCSV() {
-  //   if (this.selectedFile) {
-  //     this.apiService.importCSV(this.selectedFile).subscribe(response => {
-  //       alert('CSV importé avec succès !');
-  //       this.loadArticles();
-  //     });
-  //   }
-  // }
+  importCSV() {
+    if (this.selectedFile) {
+      this.apiService.importCSV(this.selectedFile).subscribe(response => {
+        alert('CSV importé avec succès !');
+        this.loadArticles();
+      });
+    }
+  }
 
-  // addArticle() {
-  //   this.apiService.addArticle(this.article).subscribe(response => {
-  //     alert('Article ajouté avec succès !');
-  //     this.article = { nom: '', nomenclature: '' };
-  //     this.loadArticles();
-  //   });
-  // }
+  addArticle() {
+    this.apiService.addArticle(this.article).subscribe(response => {
+      alert('Article ajouté avec succès !');
+      this.article = { nom: '', nomenclature: '' };
+      this.loadArticles();
+    });
+  }
 
   addFacture() {
     this.apiService.addFacture(this.facture).subscribe(response => {
