@@ -3,11 +3,11 @@
     <form (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="nom" class="form-label">Nom:</label>
-        <input type="text" class="form-control" id="nom" [(ngModel)]="article.nom" name="nom" required>
+        <input type="text" class="form-control" id="nom" name="nom" required>
       </div>
       <div class="mb-3">
         <label for="nomenclature" class="form-label">Nomenclature:</label>
-        <input type="text" class="form-control" id="nomenclature" [(ngModel)]="article.nomenclature" name="nomenclature" required>
+        <input type="text" class="form-control" id="nomenclature"  name="nomenclature" required>
       </div>
       <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>

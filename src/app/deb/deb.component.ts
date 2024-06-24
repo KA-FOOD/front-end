@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-deb',
+  standalone: true,
   templateUrl: './deb.component.html',
   styleUrls: ['./deb.component.css']
 })
@@ -18,7 +19,7 @@ export class DebComponent implements OnInit {
     quantite: 0,
     montant_ht: 0
   };
-  articles = [];
+  articles: any[] = [];
   selectedFile: File | undefined ;
 
   constructor(private apiService: ApiService) {}

@@ -14,7 +14,7 @@ export class AddFactureComponent implements OnInit {
     quantite: 0,
     montant_ht: 0
   };
-  articles = [];
+  articles: any[] = [] ;
 
   constructor(private apiService: ApiService) {}
 
